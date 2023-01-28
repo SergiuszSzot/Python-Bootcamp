@@ -1,0 +1,58 @@
+#Title: Drawing street with turtle (2nd homework)
+#Author: Sergiusz Szot
+#Date: 27.01.23
+#Description: Using Python code with Turtle graphics, recreate the following street scene.
+
+#Libraries:
+import turtle
+
+#Initialise:
+t=turtle.Turtle()
+
+#Procedures:
+#Procedure to draw a shape
+def Shape(sides,length,x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+    for n in range(sides):
+        t.forward(length)
+        angle=360/sides
+        t.rt(angle)
+#Procedure to draw a rectangle
+def Rect(sside,lside,x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+    for r in range(2):
+        t.forward(sside)
+        t.rt(90)
+        t.forward(lside)
+        t.rt(90)
+#procedure to move turtle:
+def mt(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+
+#Manin program
+t.width(3)                              #line width
+t.speed(50)                              #drawing speed
+x=0                                     #starting coordinates
+y=0
+for houses in range(3):                 #Building houses
+    Rect(200,300,x,y)
+    Rect(40,80,x+80,y-220)
+    Shape(4,60,x+10,y-50)
+    Shape(4,60,x+130,y-50)
+    mt(x,y)
+    t.forward(200)
+    t.lt(180-30)
+    t.forward(115)
+    t.lt(180-120)
+    t.forward(115)
+    t.setheading(0)
+    x=x+220
+
+   

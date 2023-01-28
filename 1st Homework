@@ -1,0 +1,63 @@
+#Tiltle: 1st Homework - Drawing Shapes
+#Author: Sergiusz Szot
+#Date: 20.01.23
+#Description: Drawing different types of shapes using known code.
+
+#Library:
+import turtle
+
+#Ini:
+t=turtle.Turtle()
+
+#Procedures:
+
+#Procedure for drawing shape:
+def Shape (sides,length,x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+    for n in range(sides):
+        t.forward(length)
+        angle=360/sides
+        t.rt(angle)
+
+#Procedure for moving the turtle:
+def mt(x,y):
+    t.penup()
+    t.goto(x,y)
+    t.pendown()
+
+
+
+#Main Program:
+t.speed(15)
+t.color("black")
+t.pensize(10)
+
+#Square
+Shape(4,100,-100,100)
+
+#triangle
+t.setheading(180)
+Shape(3,100,120,0)
+
+#hexagon
+t.setheading(90)
+Shape(6,50,-110,-100)
+
+#rhombus
+t.setheading(45)
+Shape(4,90,0,-100)
+
+#Crossed square
+t.setheading(90)
+Shape(4,100,-300,-200)
+mt(-300,-200)
+t.rt(45)
+t.forward(141.42)          #14.42 from diagonal of squre calculation 
+mt(-300,-100)
+t.rt(90)
+t.forward(141.42) 
+input("press any key to quit")
+
+
